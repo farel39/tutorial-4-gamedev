@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://b118pvmscylk6"]
+
+[ext_resource type="Texture2D" uid="uid://bivk5n8i3vnqc" path="res://assets/kenney_platformerpack/PNG/Enemies/fishBlue.png" id="1_clc22"]
+[ext_resource type="Script" uid="uid://ci1eewj1hyn32" path="res://scenes/FallingFish.gd" id="1_o72ex"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o72ex"]
+size = Vector2(86, 115)
+
+[node name="FallingFish" type="RigidBody2D" unique_id=872061227]
+script = ExtResource("1_o72ex")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=480028664]
+rotation = -3.1415925
+texture = ExtResource("1_clc22")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1936494130]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_o72ex")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cec7k6clm11me"]
+
+[ext_resource type="Script" uid="uid://de4b822cn86b5" path="res://scenes/LoseCondition.gd" id="1_iuiid"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iuiid"]
+
+[node name="Area" type="Area2D" unique_id=44116804]
+script = ExtResource("1_iuiid")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=252002981]
+position = Vector2(0.5, -1)
+shape = SubResource("RectangleShape2D_iuiid")
+
+[connection signal="body_entered" from="." to="." method="_on_Area_Trigger_body_entered"]
